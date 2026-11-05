@@ -1,0 +1,518 @@
+/* ==========================================================================
+   HOME PLUS LUXURIOUS FURNITURE - RAJKOT
+   Bespoke Luxury Stylesheet
+   Color Palette: Deep Walnut Brown, Warm Cashmere/Beige, Soft Gold/Bronze
+   Typography: Playfair Display (Serif) & Plus Jakarta Sans (Sans-serif)
+   ========================================================================== */
+
+:root {
+  /* Brand Luxury Palette */
+  --color-walnut-950: #0F0C0A;
+  --color-walnut-900: #1B130E;
+  --color-walnut-800: #291C15;
+  --color-walnut-700: #3D2B20;
+  --color-walnut-600: #583F2F;
+  --color-walnut-500: #7A5943;
+  --color-walnut-400: #A1795E;
+  
+  /* Champagne Gold & Warm Bronze Accents */
+  --color-gold-300: #EAD096;
+  --color-gold-400: #D8B26E;
+  --color-gold-500: #C5A059;
+  --color-gold-600: #AA823B;
+  --color-gold-700: #896425;
+  --color-gold-gradient: linear-gradient(135deg, #ECC880 0%, #C5A059 50%, #9C7735 100%);
+  --color-gold-shimmer: linear-gradient(90deg, rgba(236, 200, 128, 0.1) 0%, rgba(236, 200, 128, 0.4) 50%, rgba(236, 200, 128, 0.1) 100%);
+
+  /* Warm Linen, Alabaster & Cream */
+  --color-cream-50: #FDFBF8;
+  --color-cream-100: #F7F3EB;
+  --color-cream-200: #EFE8DC;
+  --color-cream-300: #E4D9C7;
+  --color-cream-400: #D3C3AC;
+
+  /* Charcoal, Body Text & Borders */
+  --color-charcoal-900: #191412;
+  --color-charcoal-800: #28211D;
+  --color-charcoal-700: #423730;
+  --color-charcoal-600: #62534A;
+  --color-charcoal-500: #887569;
+  --color-border-warm: #E6DCce;
+  --color-border-subtle: rgba(197, 160, 89, 0.25);
+
+  /* Functional */
+  --color-whatsapp: #25D366;
+  --color-whatsapp-dark: #1EBE5D;
+
+  /* Typography */
+  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Elevation Shadows */
+  --shadow-lux-sm: 0 4px 12px rgba(27, 19, 14, 0.05);
+  --shadow-lux-md: 0 10px 30px -4px rgba(27, 19, 14, 0.08);
+  --shadow-lux-lg: 0 20px 45px -10px rgba(27, 19, 14, 0.12);
+  --shadow-lux-xl: 0 30px 60px -12px rgba(27, 19, 14, 0.18);
+  --shadow-gold: 0 8px 25px rgba(197, 160, 89, 0.28);
+}
+
+/* Base Resets & Smooth Scrolling */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cream-50);
+  color: var(--color-charcoal-800);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream-100);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-walnut-500);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-500);
+}
+
+/* Typography Helpers */
+h1, h2, h3, h4, h5, h6, .font-serif {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--color-walnut-900);
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.text-gold {
+  color: var(--color-gold-500);
+}
+
+.text-gold-gradient {
+  background: var(--color-gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.bg-gold-gradient {
+  background: var(--color-gold-gradient);
+}
+
+.bg-walnut-900 {
+  background-color: var(--color-walnut-900);
+}
+
+.bg-walnut-950 {
+  background-color: var(--color-walnut-950);
+}
+
+.bg-cream-50 {
+  background-color: var(--color-cream-50);
+}
+
+.bg-cream-100 {
+  background-color: var(--color-cream-100);
+}
+
+.bg-cream-200 {
+  background-color: var(--color-cream-200);
+}
+
+/* Container */
+.site-container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .site-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Luxury Pill Badge */
+.lux-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid var(--color-gold-400);
+  background: rgba(197, 160, 89, 0.08);
+  color: var(--color-gold-600);
+  backdrop-filter: blur(4px);
+}
+
+.lux-badge.dark {
+  border-color: rgba(216, 178, 110, 0.35);
+  background: rgba(216, 178, 110, 0.12);
+  color: var(--color-gold-300);
+}
+
+/* Buttons */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: var(--color-gold-gradient);
+  color: #120C08;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.85rem 1.85rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow-gold);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gold::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: 0.6s ease;
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(197, 160, 89, 0.4);
+}
+
+.btn-gold:hover::after {
+  left: 100%;
+}
+
+.btn-gold:active {
+  transform: translateY(0);
+}
+
+.btn-outline-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: transparent;
+  color: var(--color-gold-300);
+  border: 1.5px solid var(--color-gold-400);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.85rem 1.85rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  backdrop-filter: blur(4px);
+}
+
+.btn-outline-gold:hover {
+  background: rgba(197, 160, 89, 0.15);
+  color: #FFF;
+  border-color: var(--color-gold-300);
+  transform: translateY(-2px);
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background-color: var(--color-whatsapp);
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.85rem 1.85rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.28);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-whatsapp:hover {
+  background-color: var(--color-whatsapp-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.38);
+}
+
+/* Luxury Card */
+.lux-card {
+  background-color: #FFFFFF;
+  border-radius: 14px;
+  border: 1px solid var(--color-border-warm);
+  box-shadow: var(--shadow-lux-sm);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  position: relative;
+}
+
+.lux-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(197, 160, 89, 0.45);
+  box-shadow: var(--shadow-lux-lg);
+}
+
+/* Sticky Navbar Styles */
+.navbar-header {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+}
+
+.navbar-scrolled {
+  background-color: rgba(15, 12, 10, 0.95) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* Navigation Links */
+.nav-link {
+  position: relative;
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--color-cream-200);
+  text-decoration: none;
+  transition: color 0.25s ease;
+  padding: 0.4rem 0;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--color-gold-400);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--color-gold-300);
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+  width: 100%;
+}
+
+/* Category Filter Tabs */
+.filter-tab {
+  padding: 0.65rem 1.4rem;
+  border-radius: 9999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-charcoal-700);
+  background: var(--color-cream-100);
+  border: 1px solid var(--color-border-warm);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.filter-tab:hover {
+  background: var(--color-cream-200);
+  color: var(--color-walnut-900);
+  border-color: var(--color-gold-400);
+}
+
+.filter-tab.active {
+  background: var(--color-walnut-900);
+  color: var(--color-gold-300);
+  border-color: var(--color-walnut-900);
+  box-shadow: 0 4px 15px rgba(27, 19, 14, 0.15);
+}
+
+/* Image Zoom Wrapper */
+.img-zoom-wrap {
+  overflow: hidden;
+  position: relative;
+}
+
+.img-zoom-wrap img {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lux-card:hover .img-zoom-wrap img {
+  transform: scale(1.06);
+}
+
+/* Floating WhatsApp Widget */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background-color: var(--color-whatsapp);
+  color: #FFF;
+  padding: 0.85rem 1.4rem;
+  border-radius: 9999px;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.floating-whatsapp:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 15px 32px rgba(37, 211, 102, 0.5);
+  background-color: var(--color-whatsapp-dark);
+}
+
+.floating-pulse {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 9999px;
+  background-color: var(--color-whatsapp);
+  opacity: 0.5;
+  z-index: -1;
+  animation: pulse-ring 2.2s infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* Mobile Quick Action Sticky Bar */
+.mobile-action-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 990;
+  background: rgba(15, 12, 10, 0.98);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(197, 160, 89, 0.3);
+  padding: 0.65rem 1rem;
+}
+
+@media (max-width: 768px) {
+  .mobile-action-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+  .floating-whatsapp {
+    bottom: 5.2rem;
+    right: 1.25rem;
+    padding: 0.75rem;
+    border-radius: 50%;
+  }
+  .floating-whatsapp span {
+    display: none;
+  }
+}
+
+/* Modal styling */
+.modal-backdrop {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  transform: scale(0.95) translateY(20px);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-backdrop.open .modal-content {
+  transform: scale(1) translateY(0);
+}
+
+/* Custom Checkbox/Radio */
+input[type="radio"]:checked + label {
+  background-color: var(--color-walnut-900);
+  color: var(--color-gold-300);
+  border-color: var(--color-gold-400);
+}
+
+/* Toast */
+.lux-toast {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 1000;
+  background: var(--color-walnut-900);
+  color: #FFF;
+  border-left: 4px solid var(--color-gold-400);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+  transform: translateX(120%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lux-toast.show {
+  transform: translateX(0);
+}
